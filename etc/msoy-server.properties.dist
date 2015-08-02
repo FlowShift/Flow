@@ -6,7 +6,7 @@
 #
 # Is this a development deployment?
 
-dev_deployment = true
+dev_deployment = false
 
 #
 # The public URL that should be used to access this Whirled installation. This
