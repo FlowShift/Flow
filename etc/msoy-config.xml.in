@@ -321,7 +321,7 @@
       <!-- metadata.publisher: A publisher's name to store in the SWF metadata-->
       <publisher>Three Rings Design, Inc.</publisher>
       <!-- metadata.title: The default title to store in the SWF metadata-->
-      <title>Whirled</title>
+      <title>FlowShift</title>
    </metadata>
    <!-- output: the filename of the SWF movie to create-->
    <!-- output usage:
