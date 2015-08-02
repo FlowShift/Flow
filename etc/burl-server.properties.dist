@@ -6,7 +6,7 @@
 #
 # Is this a development deployment?
 
-dev_deployment = true
+dev_deployment = false
 
 #
 # The hostname used by the client to connect to the game server
