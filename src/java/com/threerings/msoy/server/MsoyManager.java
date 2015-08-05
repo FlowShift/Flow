@@ -161,8 +161,8 @@ public class MsoyManager
         ClientObject caller, final InvocationService.ResultListener listener)
         throws InvocationException
     {
-        final int baseCost = _runtime.getCoinCost(CostsConfigObject.BROADCAST_BASE);
-        final int increment = _runtime.getCoinCost(CostsConfigObject.BROADCAST_INCREMENT);
+        final int baseCost = _runtime.getBarCost(CostsConfigObject.BROADCAST_BASE);
+        final int increment = _runtime.getBarCost(CostsConfigObject.BROADCAST_INCREMENT);
         final int memberId = _locator.requireMember(caller).getMemberId();
         _invoker.postUnit(new PersistingUnit("secureBroadcastQuote", listener) {
             @Override public void invokePersistent ()
@@ -203,14 +203,14 @@ public class MsoyManager
 
                 // check for a price change
                 PriceQuote newQuote = secureBroadcastQuote(memberId, baseCost, increment);
-                if (!newQuote.isPurchaseValid(Currency.COINS, authedCost, 0 /* unused exrate */)) {
+                if (!newQuote.isPurchaseValid(Currency.BARS, authedCost, 0 /* unused exrate */)) {
                     _newQuote = newQuote;
                     return;
                 }
                 // buy it!
                 _moneyLogic.buyFromOOO(
                     _memberRepo.loadMember(memberId), BROADCAST_PURCHASE_KEY,
-                    Currency.COINS, authedCost, Currency.COINS, newQuote.getCoins(),
+                    Currency.BARS, authedCost, Currency.BARS, newQuote.getBars(),
                     new BuyOperation<Void>() {
                         public Void create (boolean magicFree, Currency currency, int amountPaid)
                             throws ServiceException
