@@ -51,13 +51,13 @@ public class CostsConfigObject extends ConfigObject
     public int newRoom = -1;
 
     /** The cost of new group. */
-    public int newGroup = -3;
+    public int newGroup = -2;
 
     /** The cost of new theme for a subscriber. */
-    public int newThemeSub = 1000000;
+    public int newThemeSub = -100;
 
     /** The cost of new theme for a non-subscriber. */
-    public int newThemeNonsub = 1500000;
+    public int newThemeNonsub = -150;
 
     /** The base cost of a paid broadcast. */
     public int broadcastBase = 1000;
