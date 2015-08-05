@@ -241,12 +241,12 @@ public class MsoyManager
     /**
      * Blocks and obtains a price quote.
      */
-    protected PriceQuote secureBroadcastQuote (int memberId, int baseCoins, int incrementCoins)
+    protected PriceQuote secureBroadcastQuote (int memberId, int baseBars, int incrementCoins)
     {
-        int cost = baseCoins +
+        int cost = baseBars +
             (int) Math.ceil(incrementCoins * _moneyLogic.getRecentBroadcastFactor());
         return _moneyLogic.securePrice(
-            memberId, BROADCAST_PURCHASE_KEY, Currency.COINS, cost, false);
+            memberId, BROADCAST_PURCHASE_KEY, Currency.BARS, cost, false);
     }
 
     // dependencies
