@@ -273,7 +273,7 @@
 -->
 
     <!-- create our toybox propertis from msoy-server.properties -->
-    <exec executable="egrep">
+    <!-- <exec executable="egrep">
       <arg line="^toybox\."/>
       <arg line="${deploy.dir}/msoy-server.properties"/>
       <redirector output="${classes.dir}/toybox.properties">
@@ -281,8 +281,8 @@
           <replacestring from="toybox." to=""/>
         </outputfilterchain>
       </redirector>
-    </exec>
-
+    </exec> -->
+	
     <!-- copy a few configuration files into place -->
     <copy todir="${deploy.dir}" file="${basedir}/etc/logging.properties"/>
 
